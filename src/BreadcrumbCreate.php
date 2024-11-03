@@ -25,12 +25,20 @@ class BreadcrumbCreate
         $this->spanMode = $spanMode;
     }
 
-    public function attributeGet(array $option,string $key)
+    public function attributeGet(array $option,string $key,$idGet = true)
     {
         $result = $option[$key] ?? "";
 
         if(!is_string($result)){
             $result = "";
+        }else{
+            $getMode = 3;
+
+            if(!$idGet){
+                $getMode = 2;
+            }
+
+            $result = Create::htmlAttribute($result, 1, $getMode);
         }
 
         return $result;
