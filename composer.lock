@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ponponumi/html-attribute-create",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ponponumi/html-attribute-create.git",
-                "reference": "6f317f6cac25e1d9950341f878496bf6d5044ec5"
+                "reference": "58f448d64021cc14a326dec772cfd14ae05efdad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ponponumi/html-attribute-create/zipball/6f317f6cac25e1d9950341f878496bf6d5044ec5",
-                "reference": "6f317f6cac25e1d9950341f878496bf6d5044ec5",
+                "url": "https://api.github.com/repos/ponponumi/html-attribute-create/zipball/58f448d64021cc14a326dec772cfd14ae05efdad",
+                "reference": "58f448d64021cc14a326dec772cfd14ae05efdad",
                 "shasum": ""
             },
             "type": "library",
@@ -38,9 +38,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ponponumi/html-attribute-create/issues",
-                "source": "https://github.com/ponponumi/html-attribute-create/tree/1.0.0"
+                "source": "https://github.com/ponponumi/html-attribute-create/tree/1.0.1"
             },
-            "time": "2024-10-29T08:54:40+00:00"
+            "time": "2024-11-03T06:58:42+00:00"
         }
     ],
     "packages-dev": [],
