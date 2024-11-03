@@ -2,7 +2,7 @@
 
 namespace Ponponumi\BreadcrumbCreate;
 
-class Create
+class BreadcrumbCreate
 {
     private string $listTag = "ul";
     private string $itemTag = "li";
