@@ -69,7 +69,7 @@ class BreadcrumbCreate
                 $itemLink = $dataItem["link"] ?? "";
             }
 
-            $itemHtml = "<" . $this->itemTag . $itemAttribute . ">";
+            $itemHtml = "<" . $this->itemTag . $itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 
             if($itemLink !== ""){
                 $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . '>' . $itemName . '</a>';
