@@ -81,5 +81,7 @@ class BreadcrumbCreate
         }
 
         $html .= "</" . $this->listTag . ">";
+
+        return $html;
     }
 }
