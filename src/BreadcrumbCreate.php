@@ -52,11 +52,9 @@ class BreadcrumbCreate
         $spanStart = "";
         $spanEnd = "";
 
-        if($this->spanMode){
-            $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
-            $spanStart = "<span" . $spanAttribute . ">";
-            $spanEnd = "</span>";
-        }
+        $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
+        $spanStart = "<span" . $spanAttribute . ' itemprop="name">';
+        $spanEnd = "</span>";
 
         $html = "<" . $this->listTag . $listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
 
