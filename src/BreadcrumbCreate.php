@@ -58,6 +58,8 @@ class BreadcrumbCreate
 
         $html = "<" . $this->listTag . $listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
 
+        $i = 1;
+
         foreach($data as $dataItem){
             $itemName = "";
             $itemLink = "";
@@ -76,6 +78,8 @@ class BreadcrumbCreate
             }
 
             $itemHtml .= "</" . $this->itemTag . ">";
+            $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+            $i++;
 
             $html .= $itemHtml;
         }
