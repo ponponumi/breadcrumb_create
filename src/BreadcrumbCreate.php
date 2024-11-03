@@ -77,8 +77,8 @@ class BreadcrumbCreate
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
 
-            $itemHtml .= "</" . $this->itemTag . ">";
             $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+            $itemHtml .= "</" . $this->itemTag . ">";
             $i++;
 
             $html .= $itemHtml;
