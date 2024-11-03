@@ -13,5 +13,7 @@
             "email": "ponponumi@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "ponponumi/html-attribute-create": "^1.0"
+    }
 }
