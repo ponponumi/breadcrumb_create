@@ -48,8 +48,37 @@ class BreadcrumbCreate
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
         $itemAttribute = $this->attributeGet($option, "itemAttribute", false);
+        $spanStart = "";
+        $spanEnd = "";
+
+        if($this->spanMode){
+            $spanStart = "<span>";
+            $spanEnd = "</span>";
+        }
 
         $html = "<" . $this->listTag . $listAttribute . ">";
+
+        foreach($data as $dataItem){
+            $itemName = "";
+            $itemLink = "";
+
+            if(is_array($dataItem)){
+                $itemName = $dataItem["name"] ?? "";
+                $itemLink = $dataItem["link"] ?? "";
+            }
+
+            $itemHtml = "<" . $this->itemTag . $itemAttribute . ">";
+
+            if($itemLink !== ""){
+                $itemHtml .= '<a href="' . $itemLink . '">' . $itemName . '</a>';
+            }else{
+                $itemHtml .= $spanStart . $itemName . $spanEnd;
+            }
+
+            $itemHtml .= "<" . $this->itemTag . ">";
+
+            $html .= $itemHtml;
+        }
 
         $html .= "</" . $this->listTag . ">";
     }
