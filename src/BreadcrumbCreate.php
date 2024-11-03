@@ -70,7 +70,7 @@ class BreadcrumbCreate
             $itemHtml = "<" . $this->itemTag . $itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 
             if($itemLink !== ""){
-                $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . '>' . $itemName . '</a>';
+                $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . '>' . $spanStart . $itemName . $spanEnd . '</a>';
             }else{
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
