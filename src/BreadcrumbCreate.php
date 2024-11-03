@@ -52,13 +52,13 @@ class BreadcrumbCreate
         $spanStart = "";
         $spanEnd = "";
 
-        if($this->spanMode){
-            $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
-            $spanStart = "<span" . $spanAttribute . ">";
-            $spanEnd = "</span>";
-        }
+        $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
+        $spanStart = "<span" . $spanAttribute . ' itemprop="name">';
+        $spanEnd = "</span>";
 
-        $html = "<" . $this->listTag . $listAttribute . ">";
+        $html = "<" . $this->listTag . $listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
+
+        $i = 1;
 
         foreach($data as $dataItem){
             $itemName = "";
@@ -69,15 +69,17 @@ class BreadcrumbCreate
                 $itemLink = $dataItem["link"] ?? "";
             }
 
-            $itemHtml = "<" . $this->itemTag . $itemAttribute . ">";
+            $itemHtml = "<" . $this->itemTag . $itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 
             if($itemLink !== ""){
-                $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . '>' . $itemName . '</a>';
+                $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . ' itemprop="item">' . $spanStart . $itemName . $spanEnd . '</a>';
             }else{
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
 
+            $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
             $itemHtml .= "</" . $this->itemTag . ">";
+            $i++;
 
             $html .= $itemHtml;
         }
