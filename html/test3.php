@@ -9,5 +9,10 @@ $array = [
     ["name" => "テスト3"],
 ];
 
-$breadcrumb = new BreadcrumbCreate("div");
-echo $breadcrumb->htmlCreate($array);
+$option = [
+    "spanAttribute" => ".span#span",
+    "anchorAttribute" => ".anchor#anchor",
+];
+
+$breadcrumb = new BreadcrumbCreate("div",true);
+echo $breadcrumb->htmlCreate($array,$option);
