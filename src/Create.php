@@ -23,6 +23,17 @@ class Create
         $this->spanMode = $spanMode;
     }
 
+    public function attributeGet(array $option,string $key)
+    {
+        $result = $option[$key] ?? "";
+
+        if(!is_string($result)){
+            $result = "";
+        }
+
+        return $result;
+    }
+
     public function htmlCreate(array $data, array $option=[])
     {
         $html = "<" . $this->listTag;
