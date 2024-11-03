@@ -58,7 +58,7 @@ class BreadcrumbCreate
             $spanEnd = "</span>";
         }
 
-        $html = "<" . $this->listTag . $listAttribute . ">";
+        $html = "<" . $this->listTag . $listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
 
         foreach($data as $dataItem){
             $itemName = "";
