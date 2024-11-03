@@ -22,4 +22,9 @@ class Create
 
         $this->spanMode = $spanMode;
     }
+
+    public function htmlCreate(array $data, array $option=[])
+    {
+        $html = "<" . $this->listTag;
+    }
 }
