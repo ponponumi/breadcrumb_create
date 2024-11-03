@@ -1,0 +1,17 @@
+{
+    "name": "ponponumi/breadcrumb_create",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ponponumi\\BreadcrumbCreate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ponponumi",
+            "email": "ponponumi@gmail.com"
+        }
+    ],
+    "require": {}
+}
