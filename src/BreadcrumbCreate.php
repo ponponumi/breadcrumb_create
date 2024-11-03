@@ -48,12 +48,12 @@ class BreadcrumbCreate
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
         $itemAttribute = $this->attributeGet($option, "itemAttribute", false);
-        $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
         $anchorAttribute = $this->attributeGet($option, "anchorAttribute", false);
         $spanStart = "";
         $spanEnd = "";
 
         if($this->spanMode){
+            $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
             $spanStart = "<span" . $spanAttribute . ">";
             $spanEnd = "</span>";
         }
