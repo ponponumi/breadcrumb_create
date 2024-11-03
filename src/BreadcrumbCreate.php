@@ -48,6 +48,8 @@ class BreadcrumbCreate
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
 
-        $html = "<" . $this->listTag;
+        $html = "<" . $this->listTag . $listAttribute . ">";
+
+        $html .= "</" . $this->listTag . ">";
     }
 }
