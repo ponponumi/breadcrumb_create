@@ -9,6 +9,11 @@ class BreadcrumbCreate
     private string $listTag = "ul";
     private string $itemTag = "li";
     private $spanMode = false;
+    private $htmlEscape = true;
+    private string $listAttribute = "";
+    private string $itemAttribute = "";
+    private string $anchorAttribute = "";
+    private string $spanAttribute = "";
 
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
