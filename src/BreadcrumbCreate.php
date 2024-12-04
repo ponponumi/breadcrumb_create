@@ -8,7 +8,6 @@ class BreadcrumbCreate
 {
     private string $listTag = "ul";
     private string $itemTag = "li";
-    private $spanMode = false;
     private $htmlEscape = true;
     private string $listAttribute = "";
     private string $itemAttribute = "";
@@ -26,8 +25,6 @@ class BreadcrumbCreate
                 $this->itemTag = "div";
                 break;
         }
-
-        $this->spanMode = $spanMode;
     }
 
     public function attributeGet(array $option,string $key,$idGet = true)
