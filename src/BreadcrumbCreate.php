@@ -130,6 +130,13 @@ class BreadcrumbCreate
         }
     }
 
+    public function pageLinkKeySet(string $value="link")
+    {
+        if($value !== ""){
+            $this->pageLinkKey = $value;
+        }
+    }
+
     public function optionListSet(array $option)
     {
         // オプションをセットする
