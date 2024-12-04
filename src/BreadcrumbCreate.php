@@ -59,6 +59,17 @@ class BreadcrumbCreate
         return $result;
     }
 
+    public function htmlAttributeGet(string $value,$getMode)
+    {
+        // HTML属性を取得する
+        if($this->htmlAttributeConvert){
+            // 変換する場合
+            return Create::htmlAttribute($value, 1, $getMode);
+        }else{
+            return $value;
+        }
+    }
+
     public function listAttributeSet(string $value)
     {
         $getMode = $this->attributeGetMode();
