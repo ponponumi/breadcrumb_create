@@ -81,6 +81,14 @@ class BreadcrumbCreate
         $this->htmlEscape = $value;
     }
 
+    public function optionListGet(array $option)
+    {
+        // オプションをセットする
+        if(array_key_exists("listAttribute",$option)){
+            $this->listAttributeSet($option["listAttribute"]);
+        }
+    }
+
     public function htmlCreate(array $data, array $option=[])
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
