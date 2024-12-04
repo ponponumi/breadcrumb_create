@@ -47,6 +47,7 @@ class BreadcrumbCreate
 
     public function attributeGet(array $option,string $key,$idGet = true)
     {
+        // このメソッドはもう使わないが、外部アプリから呼び出される恐れがあるので残しておく
         $result = $option[$key] ?? "";
 
         if(!is_string($result)){
