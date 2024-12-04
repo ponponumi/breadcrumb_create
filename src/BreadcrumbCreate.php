@@ -56,6 +56,11 @@ class BreadcrumbCreate
         $this->listAttribute = $value;
     }
 
+    public function itemAttributeSet(string $value)
+    {
+        $this->itemAttribute = $value;
+    }
+
     public function htmlCreate(array $data, array $option=[])
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
