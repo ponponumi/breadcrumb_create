@@ -32,6 +32,11 @@ class BreadcrumbCreate
         return $option[$key] ?? $default;
     }
 
+    private function attributeGetMode($idGet = true)
+    {
+        return $idGet ? 3 : 2;
+    }
+
     public function attributeGet(array $option,string $key,$idGet = true)
     {
         $result = $option[$key] ?? "";
