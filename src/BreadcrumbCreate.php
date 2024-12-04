@@ -123,6 +123,13 @@ class BreadcrumbCreate
         $this->htmlAttributeConvert = $value;
     }
 
+    public function pageNameKeySet(string $value="name")
+    {
+        if($value !== ""){
+            $this->pageNameKey = $value;
+        }
+    }
+
     public function optionListSet(array $option)
     {
         // オプションをセットする
