@@ -5,7 +5,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 
 $array = [
-    ["name" => "ホーム"],
+    ["name" => "<script>alert('hello');</script>ホーム"],
 ];
 
 $breadcrumb = new BreadcrumbCreate();
