@@ -102,6 +102,10 @@ class BreadcrumbCreate
         if($this->optionCheck($option,"anchorAttribute","string")){
             $this->anchorAttributeSet($option["anchorAttribute"]);
         }
+
+        if($this->optionCheck($option,"spanAttribute","string")){
+            $this->spanAttributeSet($option["spanAttribute"]);
+        }
     }
 
     public function htmlCreate(array $data, array $option=[])
