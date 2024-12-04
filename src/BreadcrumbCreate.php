@@ -137,6 +137,15 @@ class BreadcrumbCreate
         }
     }
 
+    public function pageKeySet(string $name="name",string $link="link")
+    {
+        // ページ名とリンクのキーを変更
+        if($name !== $link){
+            $this->pageNameKeySet($name);
+            $this->pageLinkKeySet($link);
+        }
+    }
+
     public function optionListSet(array $option)
     {
         // オプションをセットする
