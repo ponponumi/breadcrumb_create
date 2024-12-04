@@ -106,6 +106,10 @@ class BreadcrumbCreate
         if($this->optionCheck($option,"spanAttribute","string")){
             $this->spanAttributeSet($option["spanAttribute"]);
         }
+
+        if($this->optionCheck($option,"htmlEscape")){
+            $this->htmlEscapeSet($option["htmlEscape"]);
+        }
     }
 
     public function htmlCreate(array $data, array $option=[])
