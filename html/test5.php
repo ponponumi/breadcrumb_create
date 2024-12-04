@@ -5,8 +5,8 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 
 $array = [
-    ["name" => "ホーム","link" => "/"],
-    ["name" => "テスト5"],
+    ["title" => "ホーム","url" => "/"],
+    ["title" => "テスト5"],
 ];
 
 $option = [
