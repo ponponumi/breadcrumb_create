@@ -49,6 +49,7 @@ class BreadcrumbCreate
         $listAttribute = $this->attributeGet($option, "listAttribute");
         $itemAttribute = $this->attributeGet($option, "itemAttribute", false);
         $anchorAttribute = $this->attributeGet($option, "anchorAttribute", false);
+        $htmlEscape = $option["htmlEscape"] ?? true;
         $spanStart = "";
         $spanEnd = "";
 
@@ -67,6 +68,11 @@ class BreadcrumbCreate
             if(is_array($dataItem)){
                 $itemName = $dataItem["name"] ?? "";
                 $itemLink = $dataItem["link"] ?? "";
+
+                if($htmlEscape){
+                    $itemName = htmlspecialchars($itemName, ENT_QUOTES);
+                    $itemLink = htmlspecialchars($itemLink, ENT_QUOTES);
+                }
             }
 
             $itemHtml = "<" . $this->itemTag . $itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
