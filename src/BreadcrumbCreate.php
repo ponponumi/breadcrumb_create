@@ -51,14 +51,26 @@ class BreadcrumbCreate
         return $result;
     }
 
-    public function listAttributeSet(string $value)
+    public function listAttributeSet(string $value,$idGet = true)
     {
-        $this->listAttribute = $value;
+        $getMode = 3;
+
+        if(!$idGet){
+            $getMode = 2;
+        }
+
+        $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
-    public function itemAttributeSet(string $value)
+    public function itemAttributeSet(string $value,$idGet = true)
     {
-        $this->itemAttribute = $value;
+        $getMode = 3;
+
+        if(!$idGet){
+            $getMode = 2;
+        }
+
+        $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
     public function htmlCreate(array $data, array $option=[])
