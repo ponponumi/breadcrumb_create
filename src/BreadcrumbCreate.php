@@ -166,8 +166,8 @@ class BreadcrumbCreate
             $itemLink = "";
 
             if(is_array($dataItem)){
-                $itemName = $dataItem["name"] ?? "";
-                $itemLink = $dataItem["link"] ?? "";
+                $itemName = $dataItem[$this->pageNameKey] ?? "";
+                $itemLink = $dataItem[$this->pageLinkKey] ?? "";
 
                 if($this->htmlEscape){
                     $itemName = htmlspecialchars($itemName, ENT_QUOTES);
