@@ -87,6 +87,10 @@ class BreadcrumbCreate
         if(array_key_exists("listAttribute",$option)){
             $this->listAttributeSet($option["listAttribute"]);
         }
+
+        if(array_key_exists("itemAttribute",$option)){
+            $this->itemAttributeSet($option["itemAttribute"]);
+        }
     }
 
     public function htmlCreate(array $data, array $option=[])
