@@ -15,6 +15,8 @@ $option = [
     "spanAttribute" => 'class="span"',
     "anchorAttribute" => 'class="anckor"',
     "htmlAttributeConvert" => false,
+    "pageNameKey" => "title",
+    "pageLinkKey" => "url",
 ];
 
 $breadcrumb = new BreadcrumbCreate();
