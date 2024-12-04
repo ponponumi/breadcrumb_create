@@ -27,9 +27,21 @@ class BreadcrumbCreate
         }
     }
 
-    public function optionGet(array $option,string $key,$default=null)
+    public function optionCheck(array $option,string $key,string|null $type=null)
     {
-        return $option[$key] ?? $default;
+        if(array_key_exists($key,$option)){
+            if($type === null){
+                // データ型が指定されていなければ
+                return true;
+            }
+
+            if(gettype($option[$key]) === $type){
+                // データ型が一致すれば
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private function attributeGetMode($idGet = true)
