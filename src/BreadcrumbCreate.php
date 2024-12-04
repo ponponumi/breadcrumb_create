@@ -75,6 +75,12 @@ class BreadcrumbCreate
         $this->spanAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
+    public function htmlEscapeSet($value)
+    {
+        // HTMLのエスケープの設定用。trueを推奨。
+        $this->htmlEscape = $value;
+    }
+
     public function htmlCreate(array $data, array $option=[])
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
