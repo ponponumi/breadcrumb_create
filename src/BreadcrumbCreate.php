@@ -96,11 +96,11 @@ class BreadcrumbCreate
     public function optionListGet(array $option)
     {
         // オプションをセットする
-        if(array_key_exists("listAttribute",$option)){
+        if($this->optionCheck($option,"listAttribute","string")){
             $this->listAttributeSet($option["listAttribute"]);
         }
 
-        if(array_key_exists("itemAttribute",$option)){
+        if($this->optionCheck($option,"itemAttribute","string")){
             $this->itemAttributeSet($option["itemAttribute"]);
         }
     }
