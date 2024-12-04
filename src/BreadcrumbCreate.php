@@ -88,7 +88,7 @@ class BreadcrumbCreate
         $this->htmlEscape = $value;
     }
 
-    public function optionListGet(array $option)
+    public function optionListSet(array $option)
     {
         // オプションをセットする
         if($this->optionCheck($option,"listAttribute","string")){
@@ -114,7 +114,7 @@ class BreadcrumbCreate
 
     public function htmlCreate(array $data, array $option=[])
     {
-        $this->optionListGet($option);
+        $this->optionListSet($option);
         $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
         $spanEnd = "</span>";
 
