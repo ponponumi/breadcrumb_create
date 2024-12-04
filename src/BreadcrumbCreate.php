@@ -67,6 +67,11 @@ class BreadcrumbCreate
             // 変換する場合
             return Create::htmlAttribute($value, 1, $getMode);
         }else{
+            if(mb_substr($value,0,1) !== " "){
+                // 最初が空文字でなければ、空文字を追加
+                $value = " " . $value;
+            }
+
             return $value;
         }
     }
