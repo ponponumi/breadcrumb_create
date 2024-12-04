@@ -169,6 +169,10 @@ class BreadcrumbCreate
             $this->spanAttributeSet($option["spanAttribute"]);
         }
 
+        if($this->optionCheck($option,"pageNameKey","string")){
+            $this->pageNameKeySet($option["pageNameKey"]);
+        }
+
         if($this->optionCheck($option,"htmlEscape")){
             $this->htmlEscapeSet($option["htmlEscape"]);
         }
