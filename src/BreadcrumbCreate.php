@@ -44,12 +44,7 @@ class BreadcrumbCreate
         if(!is_string($result)){
             $result = "";
         }else{
-            $getMode = 3;
-
-            if(!$idGet){
-                $getMode = 2;
-            }
-
+            $getMode = $this->attributeGetMode($idGet);
             $result = Create::htmlAttribute($result, 1, $getMode);
         }
 
@@ -58,23 +53,13 @@ class BreadcrumbCreate
 
     public function listAttributeSet(string $value,$idGet = true)
     {
-        $getMode = 3;
-
-        if(!$idGet){
-            $getMode = 2;
-        }
-
+        $getMode = $this->attributeGetMode($idGet);
         $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
     public function itemAttributeSet(string $value,$idGet = true)
     {
-        $getMode = 3;
-
-        if(!$idGet){
-            $getMode = 2;
-        }
-
+        $getMode = $this->attributeGetMode($idGet);
         $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
