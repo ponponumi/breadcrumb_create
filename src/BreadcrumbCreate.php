@@ -13,6 +13,7 @@ class BreadcrumbCreate
     private string $itemAttribute = "";
     private string $anchorAttribute = "";
     private string $spanAttribute = "";
+    private $htmlAttributeConvert = true;
 
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
