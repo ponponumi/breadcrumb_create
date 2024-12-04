@@ -89,6 +89,11 @@ class BreadcrumbCreate
         $this->htmlEscape = $value;
     }
 
+    public function htmlAttributeConvertSet($value)
+    {
+        $this->htmlAttributeConvert = $value;
+    }
+
     public function optionListSet(array $option)
     {
         // オプションをセットする
