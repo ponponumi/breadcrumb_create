@@ -73,25 +73,25 @@ class BreadcrumbCreate
     public function listAttributeSet(string $value)
     {
         $getMode = $this->attributeGetMode();
-        $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
+        $this->listAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
     public function itemAttributeSet(string $value)
     {
         $getMode = $this->attributeGetMode(false);
-        $this->itemAttribute = Create::htmlAttribute($value, 1, $getMode);
+        $this->itemAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
     public function anchorAttributeSet(string $value)
     {
         $getMode = $this->attributeGetMode(false);
-        $this->anchorAttribute = Create::htmlAttribute($value, 1, $getMode);
+        $this->anchorAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
     public function spanAttributeSet(string $value)
     {
         $getMode = $this->attributeGetMode(false);
-        $this->spanAttribute = Create::htmlAttribute($value, 1, $getMode);
+        $this->spanAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
     public function htmlEscapeSet($value)
