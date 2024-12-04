@@ -30,13 +30,8 @@ class BreadcrumbCreate
     public function optionCheck(array $option,string $key,string|null $type=null)
     {
         if(array_key_exists($key,$option)){
-            if($type === null){
-                // データ型が指定されていなければ
-                return true;
-            }
-
-            if(gettype($option[$key]) === $type){
-                // データ型が一致すれば
+            if($type === null || gettype($option[$key]) === $type){
+                // データ型が指定されていないか、データ型が一致すれば
                 return true;
             }
         }
