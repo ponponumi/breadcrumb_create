@@ -14,6 +14,8 @@ class BreadcrumbCreate
     private string $anchorAttribute = "";
     private string $spanAttribute = "";
     private $htmlAttributeConvert = true;
+    private string $pageNameKey = "name";
+    private string $pageLinkKey = "link";
 
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
