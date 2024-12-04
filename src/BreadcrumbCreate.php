@@ -114,6 +114,10 @@ class BreadcrumbCreate
     public function optionListSet(array $option)
     {
         // オプションをセットする
+        if($this->optionCheck($option,"htmlAttributeConvert")){
+            $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
+        }
+
         if($this->optionCheck($option,"listAttribute","string")){
             $this->listAttributeSet($option["listAttribute"]);
         }
