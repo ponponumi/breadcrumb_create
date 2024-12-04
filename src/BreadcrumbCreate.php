@@ -27,6 +27,11 @@ class BreadcrumbCreate
         }
     }
 
+    public function optionGet(array $option,string $key,$default=null)
+    {
+        return $option[$key] ?? $default;
+    }
+
     public function attributeGet(array $option,string $key,$idGet = true)
     {
         $result = $option[$key] ?? "";
