@@ -60,7 +60,7 @@ class BreadcrumbCreate
     public function itemAttributeSet(string $value,$idGet = true)
     {
         $getMode = $this->attributeGetMode($idGet);
-        $this->listAttribute = Create::htmlAttribute($value, 1, $getMode);
+        $this->itemAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
     public function htmlCreate(array $data, array $option=[])
