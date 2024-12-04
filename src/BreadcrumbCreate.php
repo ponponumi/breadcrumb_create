@@ -173,6 +173,10 @@ class BreadcrumbCreate
             $this->pageNameKeySet($option["pageNameKey"]);
         }
 
+        if($this->optionCheck($option,"pageLinkKey","string")){
+            $this->pageLinkKeySet($option["pageLinkKey"]);
+        }
+
         if($this->optionCheck($option,"htmlEscape")){
             $this->htmlEscapeSet($option["htmlEscape"]);
         }
