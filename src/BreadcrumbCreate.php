@@ -28,6 +28,24 @@ class BreadcrumbCreate
         }
     }
 
+    public function tagModeChange(string $tagMode="ul")
+    {
+        switch($tagMode){
+            case "ul":
+                $this->listTag = "ul";
+                $this->itemTag = "li";
+                break;
+            case "ol":
+                $this->listTag = "ol";
+                $this->itemTag = "li";
+                break;
+            case "div":
+                $this->listTag = "div";
+                $this->itemTag = "div";
+                break;
+        }
+    }
+
     public function optionCheck(array $option,string $key,string|null $type=null)
     {
         if(array_key_exists($key,$option)){
