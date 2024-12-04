@@ -114,18 +114,11 @@ class BreadcrumbCreate
 
     public function htmlCreate(array $data, array $option=[])
     {
-        $listAttribute = $this->attributeGet($option, "listAttribute");
-        $itemAttribute = $this->attributeGet($option, "itemAttribute", false);
-        $anchorAttribute = $this->attributeGet($option, "anchorAttribute", false);
-        $htmlEscape = $option["htmlEscape"] ?? true;
-        $spanStart = "";
-        $spanEnd = "";
-
-        $spanAttribute = $this->attributeGet($option, "spanAttribute", false);
-        $spanStart = "<span" . $spanAttribute . ' itemprop="name">';
+        $this->optionListGet($option);
+        $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
         $spanEnd = "</span>";
 
-        $html = "<" . $this->listTag . $listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
+        $html = "<" . $this->listTag . $this->listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
 
         $i = 1;
 
@@ -137,16 +130,16 @@ class BreadcrumbCreate
                 $itemName = $dataItem["name"] ?? "";
                 $itemLink = $dataItem["link"] ?? "";
 
-                if($htmlEscape){
+                if($this->htmlEscape){
                     $itemName = htmlspecialchars($itemName, ENT_QUOTES);
                     $itemLink = htmlspecialchars($itemLink, ENT_QUOTES);
                 }
             }
 
-            $itemHtml = "<" . $this->itemTag . $itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+            $itemHtml = "<" . $this->itemTag . $this->itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
 
             if($itemLink !== ""){
-                $itemHtml .= '<a href="' . $itemLink . '"' . $anchorAttribute . ' itemprop="item">' . $spanStart . $itemName . $spanEnd . '</a>';
+                $itemHtml .= '<a href="' . $itemLink . '"' . $this->anchorAttribute . ' itemprop="item">' . $spanStart . $itemName . $spanEnd . '</a>';
             }else{
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
