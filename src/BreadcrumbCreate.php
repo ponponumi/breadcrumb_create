@@ -69,6 +69,12 @@ class BreadcrumbCreate
         $this->anchorAttribute = Create::htmlAttribute($value, 1, $getMode);
     }
 
+    public function spanAttributeSet(string $value)
+    {
+        $getMode = $this->attributeGetMode(false);
+        $this->spanAttribute = Create::htmlAttribute($value, 1, $getMode);
+    }
+
     public function htmlCreate(array $data, array $option=[])
     {
         $listAttribute = $this->attributeGet($option, "listAttribute");
