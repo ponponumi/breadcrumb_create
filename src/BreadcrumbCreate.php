@@ -52,7 +52,7 @@ class BreadcrumbCreate
         return false;
     }
 
-    private function attributeGetMode($idGet = true)
+    private function attributeGetMode($idGet = true): int
     {
         return $idGet ? 3 : 2;
     }
