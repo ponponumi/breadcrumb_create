@@ -72,7 +72,7 @@ class BreadcrumbCreate
         return $result;
     }
 
-    public function htmlAttributeGet(string $value,$getMode)
+    public function htmlAttributeGet(string $value,$getMode): string
     {
         // HTML属性を取得する
         if($this->htmlAttributeConvert){
