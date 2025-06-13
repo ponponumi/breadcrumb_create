@@ -22,7 +22,7 @@ class BreadcrumbCreate
         $this->tagModeChange($tagMode);
     }
 
-    public function tagModeChange(string $tagMode="ul")
+    public function tagModeChange(string $tagMode="ul"): void
     {
         switch($tagMode){
             case "ul":
