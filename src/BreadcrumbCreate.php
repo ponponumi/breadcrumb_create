@@ -40,7 +40,7 @@ class BreadcrumbCreate
         }
     }
 
-    public function optionCheck(array $option,string $key,string|null $type=null)
+    public function optionCheck(array $option,string $key,string|null $type=null): bool
     {
         if(array_key_exists($key,$option)){
             if($type === null || gettype($option[$key]) === $type){
