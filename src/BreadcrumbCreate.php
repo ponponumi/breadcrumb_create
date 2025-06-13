@@ -22,7 +22,7 @@ class BreadcrumbCreate
         $this->tagModeChange($tagMode);
     }
 
-    public function tagModeChange(string $tagMode="ul")
+    public function tagModeChange(string $tagMode="ul"): void
     {
         switch($tagMode){
             case "ul":
@@ -40,7 +40,7 @@ class BreadcrumbCreate
         }
     }
 
-    public function optionCheck(array $option,string $key,string|null $type=null)
+    public function optionCheck(array $option,string $key,string|null $type=null): bool
     {
         if(array_key_exists($key,$option)){
             if($type === null || gettype($option[$key]) === $type){
@@ -52,7 +52,7 @@ class BreadcrumbCreate
         return false;
     }
 
-    private function attributeGetMode($idGet = true)
+    private function attributeGetMode($idGet = true): int
     {
         return $idGet ? 3 : 2;
     }
@@ -72,7 +72,7 @@ class BreadcrumbCreate
         return $result;
     }
 
-    public function htmlAttributeGet(string $value,$getMode)
+    public function htmlAttributeGet(string $value,$getMode): string
     {
         // HTML属性を取得する
         if($this->htmlAttributeConvert){
@@ -88,56 +88,56 @@ class BreadcrumbCreate
         }
     }
 
-    public function listAttributeSet(string $value)
+    public function listAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode();
         $this->listAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
-    public function itemAttributeSet(string $value)
+    public function itemAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode(false);
         $this->itemAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
-    public function anchorAttributeSet(string $value)
+    public function anchorAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode(false);
         $this->anchorAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
-    public function spanAttributeSet(string $value)
+    public function spanAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode(false);
         $this->spanAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
-    public function htmlEscapeSet($value)
+    public function htmlEscapeSet($value): void
     {
         // HTMLのエスケープの設定用。trueを推奨。
         $this->htmlEscape = $value;
     }
 
-    public function htmlAttributeConvertSet($value)
+    public function htmlAttributeConvertSet($value): void
     {
         $this->htmlAttributeConvert = $value;
     }
 
-    public function pageNameKeySet(string $value="name")
+    public function pageNameKeySet(string $value="name"): void
     {
         if($value !== ""){
             $this->pageNameKey = $value;
         }
     }
 
-    public function pageLinkKeySet(string $value="link")
+    public function pageLinkKeySet(string $value="link"): void
     {
         if($value !== ""){
             $this->pageLinkKey = $value;
         }
     }
 
-    public function pageKeySet(string $name="name",string $link="link")
+    public function pageKeySet(string $name="name",string $link="link"): void
     {
         // ページ名とリンクのキーを変更
         if($name !== $link){
@@ -146,7 +146,7 @@ class BreadcrumbCreate
         }
     }
 
-    public function optionListSet(array $option)
+    public function optionListSet(array $option): void
     {
         // オプションをセットする
         if($this->optionCheck($option,"htmlAttributeConvert")){
@@ -182,7 +182,7 @@ class BreadcrumbCreate
         }
     }
 
-    public function htmlCreate(array $data, array $option=[])
+    public function htmlCreate(array $data, array $option=[]): string
     {
         $this->optionListSet($option);
         $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
