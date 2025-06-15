@@ -184,6 +184,10 @@ class BreadcrumbCreate
 
     public function htmlCreate(array $data, array $option=[]): string
     {
+        if($data === []){
+            return "";
+        }
+
         $this->optionListSet($option);
         $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
         $spanEnd = "</span>";
