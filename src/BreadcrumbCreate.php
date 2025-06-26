@@ -160,6 +160,10 @@ class BreadcrumbCreate
             $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
         }
 
+        if($this->optionCheck($option,"microdataMode")){
+            $this->microdataModeChange(boolval($option["microdataMode"]));
+        }
+
         if($this->optionCheck($option,"listAttribute","string")){
             $this->listAttributeSet($option["listAttribute"]);
         }
