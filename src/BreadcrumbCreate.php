@@ -331,6 +331,7 @@ class BreadcrumbCreate
 
     public function jsonScript(array $data, array $option=[]): void
     {
+        // JSON-LD形式のJSONを、srciptタグで囲った文字を出力
         echo $this->jsonScriptCreate($data, $option);
     }
 }
