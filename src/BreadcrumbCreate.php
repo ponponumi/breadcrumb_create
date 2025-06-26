@@ -17,10 +17,17 @@ class BreadcrumbCreate
     private string $pageNameKey = "name";
     private string $pageLinkKey = "link";
     private bool $microdataMode = true;
+    private bool $spanMode = true;
 
-    public function __construct(string $tagMode = "ul", $spanMode = false)
+    public function __construct(string $tagMode = "ul", $spanMode = true)
     {
         $this->tagModeChange($tagMode);
+        $this->spanModeSet($spanMode);
+    }
+
+    public function spanModeSet(mixed $value): void
+    {
+        $this->spanMode = boolval($value);
     }
 
     public function tagModeChange(string $tagMode="ul"): void
@@ -217,8 +224,16 @@ class BreadcrumbCreate
         }
 
         $this->optionListSet($option);
-        $spanStart = "<span" . $this->spanAttribute . $nameMicrodata . '>';
-        $spanEnd = "</span>";
+
+        // spanタグ
+        $spanStart = "";
+        $spanEnd = "";
+
+        if($this->microdataMode || $this->spanMode){
+            // spanで囲う設定にしているか、HTMLにmicrodataを書き込む設定であれば
+            $spanStart = "<span" . $this->spanAttribute . $nameMicrodata . '>';
+            $spanEnd = "</span>";
+        }
 
         $html = "<" . $this->listTag . $this->listAttribute . $listMicrodata . '>';
 
