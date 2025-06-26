@@ -275,6 +275,11 @@ class BreadcrumbCreate
     public function jsonStringCreate(array $data, array $option=[]): string
     {
         $jsonArray = $this->jsonArrayCreate($data, $option);
+
+        if($jsonArray === []){
+            return "";
+        }
+
         return json_encode($jsonArray);
     }
 }
