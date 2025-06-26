@@ -224,8 +224,16 @@ class BreadcrumbCreate
         }
 
         $this->optionListSet($option);
-        $spanStart = "<span" . $this->spanAttribute . $nameMicrodata . '>';
-        $spanEnd = "</span>";
+
+        // spanタグ
+        $spanStart = "";
+        $spanEnd = "";
+
+        if($this->microdataMode || $this->spanMode){
+            // spanで囲う設定にしているか、HTMLにmicrodataを書き込む設定であれば
+            $spanStart = "<span" . $this->spanAttribute . $nameMicrodata . '>';
+            $spanEnd = "</span>";
+        }
 
         $html = "<" . $this->listTag . $this->listAttribute . $listMicrodata . '>';
 
