@@ -195,6 +195,20 @@ class BreadcrumbCreate
             return "";
         }
 
+        // マイクロデータ
+        $listMicrodata = "";
+        $itemMicrodata = "";
+        $linkMicrodata = "";
+        $nameMicrodata = "";
+
+        if($this->microdataMode){
+            // マイクロデータが有効であれば
+            $listMicrodata = ' itemscope itemtype="https://schema.org/BreadcrumbList"';
+            $itemMicrodata = ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"';
+            $linkMicrodata = ' itemprop="item"';
+            $nameMicrodata = ' itemprop="name"';
+        }
+
         $this->optionListSet($option);
         $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
         $spanEnd = "</span>";
