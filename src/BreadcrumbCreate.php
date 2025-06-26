@@ -94,9 +94,9 @@ class BreadcrumbCreate
      * @param array $option
      * @param string $key
      * @param boolean $idGet
-     * @return void
+     * @return string
      */
-    public function attributeGet(array $option,string $key,$idGet = true)
+    public function attributeGet(array $option,string $key,$idGet = true): string
     {
         // このメソッドはもう使わないが、外部アプリから呼び出される恐れがあるので残しておく
         $result = $option[$key] ?? "";
