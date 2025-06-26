@@ -239,9 +239,12 @@ class BreadcrumbCreate
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
 
-            $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+            if($this->microdataMode){
+                $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+                $i++;
+            }
+
             $itemHtml .= "</" . $this->itemTag . ">";
-            $i++;
 
             $html .= $itemHtml;
         }
