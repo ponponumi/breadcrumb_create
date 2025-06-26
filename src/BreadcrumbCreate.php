@@ -133,6 +133,11 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * リストの属性を変更します。
+     * @param string $value ここには、属性を渡してください。
+     * @return void
+     */
     public function listAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode();
