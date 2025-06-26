@@ -64,6 +64,13 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * オプションを確認し、あるかどうかを調べます。このメソッドは、まもなくprivateメソッドになります。
+     * @param array $option ここには、オプションの連想配列を渡してください。
+     * @param string $key ここには、オプションのキーを渡してください。
+     * @param string|null $type ここには、データ型を渡してください。全ての型を許可する場合、nullを渡してください。デフォルトではnullです。
+     * @return bool
+     */
     public function optionCheck(array $option,string $key,string|null $type=null): bool
     {
         if(array_key_exists($key,$option)){
