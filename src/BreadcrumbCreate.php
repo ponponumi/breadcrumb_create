@@ -177,6 +177,11 @@ class BreadcrumbCreate
         $this->spanAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
+    /**
+     * HTMLをエスケープするかを変更します。
+     * @param mixed $value 「true」にするとエスケープし、「false」にするとエスケープしません。エスケープしないと、XSS攻撃の対象になる可能性があるため、「true」にする事を推奨します。
+     * @return void
+     */
     public function htmlEscapeSet($value): void
     {
         // HTMLのエスケープの設定用。trueを推奨。
