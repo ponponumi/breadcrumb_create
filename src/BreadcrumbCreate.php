@@ -271,4 +271,10 @@ class BreadcrumbCreate
 
         return $result;
     }
+
+    public function jsonStringCreate(array $data, array $option=[]): string
+    {
+        $jsonArray = $this->jsonArrayCreate($data, $option);
+        return json_encode($jsonArray);
+    }
 }
