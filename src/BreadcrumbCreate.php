@@ -261,6 +261,12 @@ class BreadcrumbCreate
         return $html;
     }
 
+    public function html(array $data, array $option=[]): void
+    {
+        // HTMLを出力
+        echo $this->htmlCreate($data, $option);
+    }
+
     public function jsonArrayCreate(array $data, array $option=[]): array
     {
         // JSON-LD形式の配列を作成
