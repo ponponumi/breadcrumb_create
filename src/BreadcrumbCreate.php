@@ -307,6 +307,7 @@ class BreadcrumbCreate
 
     public function jsonStringCreate(array $data, array $option=[]): string
     {
+        // JSON-LD形式のJSONを生成
         $jsonArray = $this->jsonArrayCreate($data, $option);
 
         if($jsonArray === []){
