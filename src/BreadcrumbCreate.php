@@ -88,6 +88,14 @@ class BreadcrumbCreate
         return $idGet ? 3 : 2;
     }
 
+    /**
+     * このメソッドは、まもなく削除されます。
+     *
+     * @param array $option
+     * @param string $key
+     * @param boolean $idGet
+     * @return void
+     */
     public function attributeGet(array $option,string $key,$idGet = true)
     {
         // このメソッドはもう使わないが、外部アプリから呼び出される恐れがあるので残しておく
