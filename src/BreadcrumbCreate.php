@@ -111,6 +111,12 @@ class BreadcrumbCreate
         return $result;
     }
 
+    /**
+     * HTML属性を取得します。このメソッドは、まもなくprivateメソッドになります。
+     * @param string $value ここには、Emmet形式の文字を渡してください。
+     * @param mixed $getMode ここには、どの形式で取得するかを渡してください。
+     * @return string
+     */
     public function htmlAttributeGet(string $value,$getMode): string
     {
         // HTML属性を取得する
