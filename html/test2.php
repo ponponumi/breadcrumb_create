@@ -10,4 +10,5 @@ $array = [
 ];
 
 $breadcrumb = new BreadcrumbCreate("ol",true);
+$breadcrumb->microdataModeChange(false);
 echo $breadcrumb->htmlCreate($array);
