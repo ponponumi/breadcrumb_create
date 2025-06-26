@@ -153,31 +153,38 @@ class BreadcrumbCreate
         $this->microdataMode = $value;
     }
 
-    public function optionListSet(array $option): void
+    public function optionListSet(array $option, bool $jsonLDMode=false): void
     {
         // オプションをセットする
-        if($this->optionCheck($option,"htmlAttributeConvert")){
-            $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
-        }
+        if(!$jsonLDMode){
+            // JSON-LDでなければ
+            if($this->optionCheck($option,"htmlAttributeConvert")){
+                $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
+            }
 
-        if($this->optionCheck($option,"microdataMode")){
-            $this->microdataModeSet(boolval($option["microdataMode"]));
-        }
+            if($this->optionCheck($option,"microdataMode")){
+                $this->microdataModeSet(boolval($option["microdataMode"]));
+            }
 
-        if($this->optionCheck($option,"listAttribute","string")){
-            $this->listAttributeSet($option["listAttribute"]);
-        }
+            if($this->optionCheck($option,"listAttribute","string")){
+                $this->listAttributeSet($option["listAttribute"]);
+            }
 
-        if($this->optionCheck($option,"itemAttribute","string")){
-            $this->itemAttributeSet($option["itemAttribute"]);
-        }
+            if($this->optionCheck($option,"itemAttribute","string")){
+                $this->itemAttributeSet($option["itemAttribute"]);
+            }
 
-        if($this->optionCheck($option,"anchorAttribute","string")){
-            $this->anchorAttributeSet($option["anchorAttribute"]);
-        }
+            if($this->optionCheck($option,"anchorAttribute","string")){
+                $this->anchorAttributeSet($option["anchorAttribute"]);
+            }
 
-        if($this->optionCheck($option,"spanAttribute","string")){
-            $this->spanAttributeSet($option["spanAttribute"]);
+            if($this->optionCheck($option,"spanAttribute","string")){
+                $this->spanAttributeSet($option["spanAttribute"]);
+            }
+
+            if($this->optionCheck($option,"htmlEscape")){
+                $this->htmlEscapeSet($option["htmlEscape"]);
+            }
         }
 
         if($this->optionCheck($option,"pageNameKey","string")){
@@ -186,10 +193,6 @@ class BreadcrumbCreate
 
         if($this->optionCheck($option,"pageLinkKey","string")){
             $this->pageLinkKeySet($option["pageLinkKey"]);
-        }
-
-        if($this->optionCheck($option,"htmlEscape")){
-            $this->htmlEscapeSet($option["htmlEscape"]);
         }
     }
 
@@ -262,5 +265,79 @@ class BreadcrumbCreate
     {
         // HTMLを出力
         echo $this->htmlCreate($data, $option);
+    }
+
+    public function jsonArrayCreate(array $data, array $option=[]): array
+    {
+        // JSON-LD形式の配列を作成
+        if($data === []){
+            return [];
+        }
+
+        $this->optionListSet($option, true);
+
+        $result = [
+            "@context" => "https://schema.org",
+            "@type" => "BreadcrumbList",
+            "itemListElement" => [],
+        ];
+
+        $count = 1;
+
+        foreach($data as $dataItem){
+            $itemName = "";
+            $itemLink = "";
+
+            if(is_array($dataItem)){
+                $itemName = $dataItem[$this->pageNameKey] ?? "";
+                $itemLink = $dataItem[$this->pageLinkKey] ?? "";
+            }
+
+            $addData = [
+                "@type" => "ListItem",
+                "position" => $count,
+                "name" => $itemName,
+            ];
+
+            if($itemLink !== ""){
+                $addData["item"] = $itemLink;
+            }
+
+            $count++;
+
+            $result["itemListElement"][] = $addData;
+        }
+
+        return $result;
+    }
+
+    public function jsonStringCreate(array $data, array $option=[]): string
+    {
+        // JSON-LD形式のJSONを生成
+        $jsonArray = $this->jsonArrayCreate($data, $option);
+
+        if($jsonArray === []){
+            return "";
+        }
+
+        return json_encode($jsonArray);
+    }
+
+    public function jsonScriptCreate(array $data, array $option=[]): string
+    {
+        // JSON-LD形式のJSONを、srciptタグで囲った文字を生成
+        $jsonLD = $this->jsonStringCreate($data, $option);
+
+        if($jsonLD !== ""){
+            $jsonLD = '<script type="application/ld+json">' . $jsonLD . '</script>';
+        }
+
+        return $jsonLD;
+    }
+
+    public function jsonScript(array $data, array $option=[]): void
+    {
+        // JSON-LD形式のJSONを、srciptタグで囲った文字を出力
+        echo $this->jsonScriptCreate($data, $option);
     }
 }
