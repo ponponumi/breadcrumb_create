@@ -266,6 +266,8 @@ class BreadcrumbCreate
                 $addData["item"] = $itemLink;
             }
 
+            $count++;
+
             $result["itemListElement"][] = $addData;
         }
 
