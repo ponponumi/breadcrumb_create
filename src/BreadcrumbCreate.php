@@ -198,6 +198,11 @@ class BreadcrumbCreate
         $this->htmlAttributeConvert = $value;
     }
 
+    /**
+     * ページの名前のキーを設定します。
+     * @param string $value 新しいキーを渡してください。
+     * @return void
+     */
     public function pageNameKeySet(string $value="name"): void
     {
         if($value !== ""){
