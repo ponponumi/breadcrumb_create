@@ -229,4 +229,46 @@ class BreadcrumbCreate
 
         return $html;
     }
+
+    public function jsonArrayCreate(array $data, array $option=[]): array
+    {
+        // JSON-LD形式の配列を作成
+        if($data === []){
+            return [];
+        }
+
+        $this->optionListSet($option);
+
+        $result = [
+            "@context" => "https://schema.org",
+            "@type" => "BreadcrumbList",
+            "itemListElement", [],
+        ];
+
+        $count = 1;
+
+        foreach($data as $dataItem){
+            $itemName = "";
+            $itemLink = "";
+
+            if(is_array($dataItem)){
+                $itemName = $dataItem[$this->pageNameKey] ?? "";
+                $itemLink = $dataItem[$this->pageLinkKey] ?? "";
+            }
+
+            $addData = [
+                "@type" => "ListItem",
+                "position" => $count,
+                "name" => $itemName,
+            ];
+
+            if($itemLink !== ""){
+                $addData["item"] = $itemLink;
+            }
+
+            $result["itemListElement"][] = $addData;
+        }
+
+        return $result;
+    }
 }
