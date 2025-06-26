@@ -188,6 +188,11 @@ class BreadcrumbCreate
         $this->htmlEscape = $value;
     }
 
+    /**
+     * HTMLの属性を、Emmet形式から変換するか選びます。
+     * @param mixed $value 「true」なら変換し、「false」なら変換しません。
+     * @return void
+     */
     public function htmlAttributeConvertSet($value): void
     {
         $this->htmlAttributeConvert = $value;
