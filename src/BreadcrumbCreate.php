@@ -19,6 +19,11 @@ class BreadcrumbCreate
     private bool $microdataMode = true;
     private bool $spanMode = true;
 
+    /**
+     * パンくずリストを作成する準備をします。
+     * @param string $tagMode タグモードを「ul」「ol」「div」から設定してください。「ul」または「ol」をおすすめします。
+     * @param mixed $spanMode spanタグで囲うかどうかを選んでください。microdataモードの場合は、無条件で囲います。
+     */
     public function __construct(string $tagMode = "ul", $spanMode = true)
     {
         $this->tagModeChange($tagMode);
