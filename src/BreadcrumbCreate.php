@@ -222,6 +222,12 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * ページの名前とリンクのキーを設定します。
+     * @param string $name 新しい名前のキーを渡してください。
+     * @param string $link 新しいリンクのキーを渡してください。
+     * @return void
+     */
     public function pageKeySet(string $name="name",string $link="link"): void
     {
         // ページ名とリンクのキーを変更
