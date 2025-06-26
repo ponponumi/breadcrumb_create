@@ -17,6 +17,7 @@ class BreadcrumbCreate
     private string $pageNameKey = "name";
     private string $pageLinkKey = "link";
     private bool $microdataMode = true;
+    private bool $spanMode = true;
 
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
