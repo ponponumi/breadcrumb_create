@@ -155,6 +155,11 @@ class BreadcrumbCreate
         $this->itemAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
+    /**
+     * アンカーの属性を変更します。
+     * @param string $value ここには、属性を渡してください。
+     * @return void
+     */
     public function anchorAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode(false);
