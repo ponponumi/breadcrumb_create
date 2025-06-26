@@ -144,6 +144,11 @@ class BreadcrumbCreate
         $this->listAttribute = $this->htmlAttributeGet($value, $getMode);
     }
 
+    /**
+     * アイテムの属性を変更します。
+     * @param string $value ここには、属性を渡してください。
+     * @return void
+     */
     public function itemAttributeSet(string $value): void
     {
         $getMode = $this->attributeGetMode(false);
