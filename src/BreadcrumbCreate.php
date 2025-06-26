@@ -147,6 +147,12 @@ class BreadcrumbCreate
         }
     }
 
+    public function microdataModeChange(bool $value=true): void
+    {
+        // microdataモードを有効にするか
+        $this->microdataMode = $value;
+    }
+
     public function optionListSet(array $option): void
     {
         // オプションをセットする
