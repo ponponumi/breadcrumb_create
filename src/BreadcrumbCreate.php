@@ -22,6 +22,7 @@ class BreadcrumbCreate
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
         $this->tagModeChange($tagMode);
+        $this->spanModeSet($spanMode);
     }
 
     public function spanModeSet(mixed $value): void
