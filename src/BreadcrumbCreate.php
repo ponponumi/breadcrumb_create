@@ -295,4 +295,9 @@ class BreadcrumbCreate
 
         return $jsonLD;
     }
+
+    public function jsonScript(array $data, array $option=[]): void
+    {
+        echo $this->jsonScriptCreate($data, $option);
+    }
 }
