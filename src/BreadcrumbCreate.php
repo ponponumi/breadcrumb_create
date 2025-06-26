@@ -240,7 +240,7 @@ class BreadcrumbCreate
             return [];
         }
 
-        $this->optionListSet($option);
+        $this->optionListSet($option, true);
 
         $result = [
             "@context" => "https://schema.org",
