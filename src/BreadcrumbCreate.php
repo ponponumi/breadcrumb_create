@@ -146,27 +146,34 @@ class BreadcrumbCreate
         }
     }
 
-    public function optionListSet(array $option): void
+    public function optionListSet(array $option, bool $jsonLDMode=false): void
     {
         // オプションをセットする
-        if($this->optionCheck($option,"htmlAttributeConvert")){
-            $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
-        }
+        if(!$jsonLDMode){
+            // JSON-LDでなければ
+            if($this->optionCheck($option,"htmlAttributeConvert")){
+                $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
+            }
 
-        if($this->optionCheck($option,"listAttribute","string")){
-            $this->listAttributeSet($option["listAttribute"]);
-        }
+            if($this->optionCheck($option,"listAttribute","string")){
+                $this->listAttributeSet($option["listAttribute"]);
+            }
 
-        if($this->optionCheck($option,"itemAttribute","string")){
-            $this->itemAttributeSet($option["itemAttribute"]);
-        }
+            if($this->optionCheck($option,"itemAttribute","string")){
+                $this->itemAttributeSet($option["itemAttribute"]);
+            }
 
-        if($this->optionCheck($option,"anchorAttribute","string")){
-            $this->anchorAttributeSet($option["anchorAttribute"]);
-        }
+            if($this->optionCheck($option,"anchorAttribute","string")){
+                $this->anchorAttributeSet($option["anchorAttribute"]);
+            }
 
-        if($this->optionCheck($option,"spanAttribute","string")){
-            $this->spanAttributeSet($option["spanAttribute"]);
+            if($this->optionCheck($option,"spanAttribute","string")){
+                $this->spanAttributeSet($option["spanAttribute"]);
+            }
+
+            if($this->optionCheck($option,"htmlEscape")){
+                $this->htmlEscapeSet($option["htmlEscape"]);
+            }
         }
 
         if($this->optionCheck($option,"pageNameKey","string")){
@@ -175,10 +182,6 @@ class BreadcrumbCreate
 
         if($this->optionCheck($option,"pageLinkKey","string")){
             $this->pageLinkKeySet($option["pageLinkKey"]);
-        }
-
-        if($this->optionCheck($option,"htmlEscape")){
-            $this->htmlEscapeSet($option["htmlEscape"]);
         }
     }
 
