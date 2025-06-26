@@ -24,6 +24,11 @@ class BreadcrumbCreate
         $this->tagModeChange($tagMode);
     }
 
+    public function spanModeSet(mixed $value): void
+    {
+        $this->spanMode = boolval($value);
+    }
+
     public function tagModeChange(string $tagMode="ul"): void
     {
         switch($tagMode){
