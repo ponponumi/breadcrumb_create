@@ -30,6 +30,12 @@ class BreadcrumbCreate
         $this->spanModeSet($spanMode);
     }
 
+    /**
+     * spanタグで囲うかどうかを選んでください。microdataモードの場合は、無条件で囲います。
+     *
+     * @param mixed $value 囲う場合はtrue、囲わない場合はfalseを渡してください。
+     * @return void
+     */
     public function spanModeSet(mixed $value): void
     {
         $this->spanMode = boolval($value);
