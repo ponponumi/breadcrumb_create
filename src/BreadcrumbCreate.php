@@ -16,6 +16,7 @@ class BreadcrumbCreate
     private $htmlAttributeConvert = true;
     private string $pageNameKey = "name";
     private string $pageLinkKey = "link";
+    private bool $microdataMode = true;
 
     public function __construct(string $tagMode = "ul", $spanMode = false)
     {
@@ -146,11 +147,21 @@ class BreadcrumbCreate
         }
     }
 
+    public function microdataModeSet(bool $value=true): void
+    {
+        // microdataモードを有効にするか
+        $this->microdataMode = $value;
+    }
+
     public function optionListSet(array $option): void
     {
         // オプションをセットする
         if($this->optionCheck($option,"htmlAttributeConvert")){
             $this->htmlAttributeConvertSet($option["htmlAttributeConvert"]);
+        }
+
+        if($this->optionCheck($option,"microdataMode")){
+            $this->microdataModeSet(boolval($option["microdataMode"]));
         }
 
         if($this->optionCheck($option,"listAttribute","string")){
@@ -188,11 +199,25 @@ class BreadcrumbCreate
             return "";
         }
 
+        // マイクロデータ
+        $listMicrodata = "";
+        $itemMicrodata = "";
+        $linkMicrodata = "";
+        $nameMicrodata = "";
+
+        if($this->microdataMode){
+            // マイクロデータが有効であれば
+            $listMicrodata = ' itemscope itemtype="https://schema.org/BreadcrumbList"';
+            $itemMicrodata = ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"';
+            $linkMicrodata = ' itemprop="item"';
+            $nameMicrodata = ' itemprop="name"';
+        }
+
         $this->optionListSet($option);
-        $spanStart = "<span" . $this->spanAttribute . ' itemprop="name">';
+        $spanStart = "<span" . $this->spanAttribute . $nameMicrodata . '>';
         $spanEnd = "</span>";
 
-        $html = "<" . $this->listTag . $this->listAttribute . ' itemscope itemtype="https://schema.org/BreadcrumbList">';
+        $html = "<" . $this->listTag . $this->listAttribute . $listMicrodata . '>';
 
         $i = 1;
 
@@ -210,17 +235,20 @@ class BreadcrumbCreate
                 }
             }
 
-            $itemHtml = "<" . $this->itemTag . $this->itemAttribute . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">';
+            $itemHtml = "<" . $this->itemTag . $this->itemAttribute . $itemMicrodata . '>';
 
             if($itemLink !== ""){
-                $itemHtml .= '<a href="' . $itemLink . '"' . $this->anchorAttribute . ' itemprop="item">' . $spanStart . $itemName . $spanEnd . '</a>';
+                $itemHtml .= '<a href="' . $itemLink . '"' . $this->anchorAttribute . $linkMicrodata . '>' . $spanStart . $itemName . $spanEnd . '</a>';
             }else{
                 $itemHtml .= $spanStart . $itemName . $spanEnd;
             }
 
-            $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+            if($this->microdataMode){
+                $itemHtml .= '<meta itemprop="position" content="' . strval($i) . '">';
+                $i++;
+            }
+
             $itemHtml .= "</" . $this->itemTag . ">";
-            $i++;
 
             $html .= $itemHtml;
         }
