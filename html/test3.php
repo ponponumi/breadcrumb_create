@@ -15,4 +15,5 @@ $option = [
 ];
 
 $breadcrumb = new BreadcrumbCreate("div",true);
+$breadcrumb->spanModeSet(false);
 echo $breadcrumb->htmlCreate($array,$option);
