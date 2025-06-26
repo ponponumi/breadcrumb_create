@@ -242,7 +242,7 @@ class BreadcrumbCreate
         $result = [
             "@context" => "https://schema.org",
             "@type" => "BreadcrumbList",
-            "itemListElement", [],
+            "itemListElement" => [],
         ];
 
         $count = 1;
