@@ -41,6 +41,11 @@ class BreadcrumbCreate
         $this->spanMode = boolval($value);
     }
 
+    /**
+     * 使うHTMLタグを変えます。
+     * @param string タグモードを「ul」「ol」「div」から設定してください。「ul」または「ol」をおすすめします。
+     * @return void
+     */
     public function tagModeChange(string $tagMode="ul"): void
     {
         switch($tagMode){
