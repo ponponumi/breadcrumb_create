@@ -210,6 +210,11 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * ページのリンクのキーを設定します。
+     * @param string $value 新しいキーを渡してください。
+     * @return void
+     */
     public function pageLinkKeySet(string $value="link"): void
     {
         if($value !== ""){
