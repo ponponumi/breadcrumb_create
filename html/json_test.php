@@ -21,3 +21,4 @@ $option = [
 
 $breadcrumb = new BreadcrumbCreate();
 echo $breadcrumb->jsonStringCreate($array,$option);
+var_dump($breadcrumb);
