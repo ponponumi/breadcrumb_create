@@ -257,4 +257,10 @@ class BreadcrumbCreate
 
         return $html;
     }
+
+    public function html(array $data, array $option=[]): void
+    {
+        // HTMLを出力
+        echo $this->htmlCreate($data, $option);
+    }
 }

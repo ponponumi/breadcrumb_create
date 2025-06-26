@@ -9,4 +9,4 @@ $array = [
 ];
 
 $breadcrumb = new BreadcrumbCreate();
-echo $breadcrumb->htmlCreate($array);
+$breadcrumb->html($array);
