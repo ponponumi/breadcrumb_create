@@ -19,7 +19,7 @@ class BreadcrumbCreate
     private bool $microdataMode = true;
     private bool $spanMode = true;
 
-    public function __construct(string $tagMode = "ul", $spanMode = false)
+    public function __construct(string $tagMode = "ul", $spanMode = true)
     {
         $this->tagModeChange($tagMode);
         $this->spanModeSet($spanMode);
