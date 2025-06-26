@@ -147,7 +147,7 @@ class BreadcrumbCreate
         }
     }
 
-    public function microdataModeChange(bool $value=true): void
+    public function microdataModeSet(bool $value=true): void
     {
         // microdataモードを有効にするか
         $this->microdataMode = $value;
@@ -161,7 +161,7 @@ class BreadcrumbCreate
         }
 
         if($this->optionCheck($option,"microdataMode")){
-            $this->microdataModeChange(boolval($option["microdataMode"]));
+            $this->microdataModeSet(boolval($option["microdataMode"]));
         }
 
         if($this->optionCheck($option,"listAttribute","string")){
