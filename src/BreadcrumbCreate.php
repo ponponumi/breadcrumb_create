@@ -284,4 +284,15 @@ class BreadcrumbCreate
 
         return json_encode($jsonArray);
     }
+
+    public function jsonScriptCreate(array $data, array $option=[]): string
+    {
+        $jsonLD = $this->jsonStringCreate($data, $option);
+
+        if($jsonLD !== ""){
+            $jsonLD = '<script type="application/ld+json">' . $jsonLD . '</script>';
+        }
+
+        return $jsonLD;
+    }
 }
