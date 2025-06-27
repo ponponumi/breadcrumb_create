@@ -92,6 +92,20 @@ $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->tagModeChange("ol");
 ```
 
+#### 引数について
+
+##### string $tagMode="ul"
+
+「ul」にすると、ulタグでliタグを囲います。
+
+「ol」にすると、olタグでliタグを囲います。
+
+「div」にすると、divタグでdivタグを囲います。
+
+「ul」または「ol」にする事をおすすめします。
+
+「ul」「ol」「div」以外の文字を渡した場合、エラーは発生せず、現在の設定が引き継がれます。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
