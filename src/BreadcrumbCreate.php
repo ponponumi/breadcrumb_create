@@ -474,6 +474,12 @@ class BreadcrumbCreate
         return $jsonLD;
     }
 
+    /**
+     * JSON-LD形式のJSONを作成し、scriptタグで囲って出力します。
+     * @param array $data ここには、パンくずリストのデータを渡してください。
+     * @param array $option ここには、オプションの配列を渡してください。
+     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     */
     public function jsonScript(array $data, array $option=[]): void
     {
         // JSON-LD形式のJSONを、srciptタグで囲った文字を出力
