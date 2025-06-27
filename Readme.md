@@ -56,6 +56,27 @@ spanタグで囲うかどうかを選びます。
 
 なお、microdataモードが有効の場合、こちらで「false」を指定したとしても、spanタグで囲いますのでご注意ください。
 
+### spanModeSetメソッドについて
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->spanModeSet(true);
+```
+
+#### 引数について
+
+##### mixed $value
+
+spanタグで囲うかどうかを選びます。
+
+「true」の場合は囲い、「false」の場合は囲いません。
+
+bool型以外を渡した場合、boolval関数で変換されます。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
