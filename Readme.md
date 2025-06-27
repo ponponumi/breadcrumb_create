@@ -79,6 +79,19 @@ bool型以外を渡した場合、boolval関数で変換されます。
 
 なお、microdataモードが有効の場合、こちらで「false」を指定したとしても、spanタグで囲いますのでご注意ください。
 
+### tagModeChangeメソッドについて
+
+使うHTMLタグを選びます。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->tagModeChange("ol");
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
