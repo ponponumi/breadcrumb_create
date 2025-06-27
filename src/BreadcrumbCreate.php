@@ -83,6 +83,11 @@ class BreadcrumbCreate
         return false;
     }
 
+    /**
+     * IDを取得するか選びます。
+     * @param mixed $idGet trueなら取得し、falseならclassのみ取得します。
+     * @return int
+     */
     private function attributeGetMode($idGet = true): int
     {
         return $idGet ? 3 : 2;
