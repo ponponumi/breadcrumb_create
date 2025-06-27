@@ -46,6 +46,14 @@ $breadcrumb = new BreadcrumbCreate("ul",true);
 
 「ul」または「ol」にする事をおすすめします。
 
+##### $spanMode=true
+
+spanタグで囲うかどうかを選びます。
+
+初期状態では「true」です。
+
+なお、microdataモードが有効の場合、こちらで「false」を指定したとしても、spanタグで囲いますのでご注意ください。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
