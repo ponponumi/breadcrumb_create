@@ -108,6 +108,27 @@ $breadcrumb->tagModeChange("ol");
 
 「ul」「ol」「div」以外の文字を渡した場合、エラーは発生せず、現在の設定が引き継がれます。
 
+### listAttributeSetメソッドについて
+
+HTMLのリストのタグ(ulまたはli)の、class属性とid属性を指定します。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->listAttributeSet(".breadcrumb#breadcrumb");
+```
+
+または
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlAttributeConvertSet(false);
+$breadcrumb->listAttributeSet('class="breadcrumb" id="breadcrumb"');
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
