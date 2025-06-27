@@ -380,7 +380,7 @@ class BreadcrumbCreate
      * HTMLを生成し、出力します。
      * @param array $data ここには、パンくずリストのデータを渡してください。
      * @param array $option ここには、オプションの配列を渡してください。
-     * @return string
+     * @return void
      */
     public function html(array $data, array $option=[]): void
     {
@@ -442,7 +442,7 @@ class BreadcrumbCreate
      * JSON-LD形式の配列を作成し、JSONとして返します。
      * @param array $data ここには、パンくずリストのデータを渡してください。
      * @param array $option ここには、オプションの配列を渡してください。
-     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     * @return string
      */
     public function jsonStringCreate(array $data, array $option=[]): string
     {
@@ -460,7 +460,7 @@ class BreadcrumbCreate
      * JSON-LD形式のJSONを作成し、scriptタグで囲って返します。
      * @param array $data ここには、パンくずリストのデータを渡してください。
      * @param array $option ここには、オプションの配列を渡してください。
-     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     * @return string
      */
     public function jsonScriptCreate(array $data, array $option=[]): string
     {
@@ -478,7 +478,7 @@ class BreadcrumbCreate
      * JSON-LD形式のJSONを作成し、scriptタグで囲って出力します。
      * @param array $data ここには、パンくずリストのデータを渡してください。
      * @param array $option ここには、オプションの配列を渡してください。
-     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     * @return void
      */
     public function jsonScript(array $data, array $option=[]): void
     {
