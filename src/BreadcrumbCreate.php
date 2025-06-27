@@ -297,6 +297,12 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * HTMLを生成します。
+     * @param array $data ここには、パンくずリストのデータを渡してください。
+     * @param array $option ここには、オプションの配列を渡してください。
+     * @return string
+     */
     public function htmlCreate(array $data, array $option=[]): string
     {
         if($data === []){
