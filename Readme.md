@@ -24,6 +24,14 @@ use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 
 このクラスのメソッドは、全て動的メソッドとして作成しているため、インスタンスの作成が必要です。
 
+### コンストラクタについて
+
+次のように記述してください。
+
+```php
+$breadcrumb = new BreadcrumbCreate("ul",true);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
