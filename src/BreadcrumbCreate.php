@@ -388,6 +388,12 @@ class BreadcrumbCreate
         echo $this->htmlCreate($data, $option);
     }
 
+    /**
+     * JSON-LD形式の配列を作成します。
+     * @param array $data ここには、パンくずリストのデータを渡してください。
+     * @param array $option ここには、オプションの配列を渡してください。
+     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     */
     public function jsonArrayCreate(array $data, array $option=[]): array
     {
         // JSON-LD形式の配列を作成
