@@ -20,6 +20,10 @@ require_once __DIR__ . "/vendor/autoload.php";
 use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 ```
 
+## BreadcrumbCreateクラスについて
+
+このクラスのメソッドは、全て動的メソッドとして作成しているため、インスタンスの作成が必要です。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
