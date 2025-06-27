@@ -46,6 +46,8 @@ $breadcrumb = new BreadcrumbCreate("ul",true);
 
 「ul」または「ol」にする事をおすすめします。
 
+「ul」「ol」「div」以外の文字を渡した場合、「ul」として処理されます。
+
 ##### $spanMode=true
 
 spanタグで囲うかどうかを選びます。
