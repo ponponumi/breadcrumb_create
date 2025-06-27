@@ -438,6 +438,12 @@ class BreadcrumbCreate
         return $result;
     }
 
+    /**
+     * JSON-LD形式の配列を作成し、JSONとして返します。
+     * @param array $data ここには、パンくずリストのデータを渡してください。
+     * @param array $option ここには、オプションの配列を渡してください。
+     * @return array[]|array{@context: string, @type: string, itemListElement: array}
+     */
     public function jsonStringCreate(array $data, array $option=[]): string
     {
         // JSON-LD形式のJSONを生成
