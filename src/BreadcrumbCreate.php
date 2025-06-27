@@ -237,6 +237,11 @@ class BreadcrumbCreate
         }
     }
 
+    /**
+     * マイクロデータを有効にするか設定します。
+     * @param bool $value 「true」なら有効、「false」なら無効です。
+     * @return void
+     */
     public function microdataModeSet(bool $value=true): void
     {
         // microdataモードを有効にするか
