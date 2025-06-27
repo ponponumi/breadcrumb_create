@@ -32,6 +32,20 @@ use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 $breadcrumb = new BreadcrumbCreate("ul",true);
 ```
 
+#### 引数について
+
+左から、次のようになっています。
+
+##### string $tagMode="ul"
+
+「ul」にすると、ulタグでliタグを囲います。
+
+「ol」にすると、olタグでliタグを囲います。
+
+「div」にすると、divタグでdivタグを囲います。
+
+「ul」または「ol」にする事をおすすめします。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
