@@ -248,6 +248,12 @@ class BreadcrumbCreate
         $this->microdataMode = $value;
     }
 
+    /**
+     * 配列から、オプションをセットします。
+     * @param array $option ここには、オプションの配列を渡してください。
+     * @param bool $jsonLDMode JSON-LDの設定のみを行う場合、trueを渡してください。
+     * @return void
+     */
     public function optionListSet(array $option, bool $jsonLDMode=false): void
     {
         // オプションをセットする
