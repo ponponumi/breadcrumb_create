@@ -168,6 +168,37 @@ $breadcrumb->itemAttributeSet('class="breadcrumb-item"');
 </li>
 ```
 
+### anchorAttributeSetメソッドについて
+
+HTMLのアンカータグ(aタグ)の、class属性を指定します。
+
+id属性は指定できません。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->anchorAttributeSet(".breadcrumb-item-link");
+```
+
+または
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlAttributeConvertSet(false);
+$breadcrumb->anchorAttributeSet('class="breadcrumb-item-link"');
+```
+
+この場合、いずれも次のようなHTMLが生成されます。
+
+```html
+<a class="breadcrumb-item-link">
+    <!-- パンくずリストのHTML -->
+</a>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
