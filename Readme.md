@@ -199,6 +199,37 @@ $breadcrumb->anchorAttributeSet('class="breadcrumb-item-link"');
 </a>
 ```
 
+### spanAttributeSetメソッドについて
+
+HTMLのspanタグの、class属性を指定します。
+
+id属性は指定できません。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->spanAttributeSet(".breadcrumb-item-name");
+```
+
+または
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlAttributeConvertSet(false);
+$breadcrumb->spanAttributeSet('class="breadcrumb-item-name"');
+```
+
+この場合、いずれも次のようなHTMLが生成されます。
+
+```html
+<span class="breadcrumb-item-name">
+    トップ
+</span>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
