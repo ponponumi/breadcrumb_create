@@ -110,7 +110,7 @@ $breadcrumb->tagModeChange("ol");
 
 ### listAttributeSetメソッドについて
 
-HTMLのリストのタグ(ulまたはli)の、class属性とid属性を指定します。
+HTMLのリストのタグ(ulまたはol)の、class属性とid属性を指定します。
 
 次のように記述してください。
 
