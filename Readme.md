@@ -129,6 +129,14 @@ $breadcrumb->htmlAttributeConvertSet(false);
 $breadcrumb->listAttributeSet('class="breadcrumb" id="breadcrumb"');
 ```
 
+この場合、いずれも次のようなHTMLが生成されます。
+
+```html
+<ul class="breadcrumb" id="breadcrumb">
+    <!-- パンくずリストのHTML -->
+</ul>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
