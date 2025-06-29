@@ -108,6 +108,19 @@ $breadcrumb->tagModeChange("ol");
 
 「ul」「ol」「div」以外の文字を渡した場合、エラーは発生せず、現在の設定が引き継がれます。
 
+### htmlAttributeConvertSetメソッドについて
+
+HTMLの属性を、Emmet形式から変換するか選びます。
+
+変換する場合、例えば「#breadcrumb-elem.breadcrumb.breadcrumb-list」という文字を渡すと、「id="breadcrumb-elem" class="breadcrumb breadcrumb-list"」を出力します。
+
+「true」を渡せば変換し、「false」を渡せば変換しません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlAttributeConvertSet(true);
+```
+
 ### listAttributeSetメソッドについて
 
 HTMLのリストのタグ(ulまたはol)の、class属性とid属性を指定します。
