@@ -137,6 +137,37 @@ $breadcrumb->listAttributeSet('class="breadcrumb" id="breadcrumb"');
 </ul>
 ```
 
+### itemAttributeSetメソッドについて
+
+HTMLのリストアイテムのタグ(li)の、class属性を指定します。
+
+id属性は指定できません。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->itemAttributeSet(".breadcrumb-item");
+```
+
+または
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlAttributeConvertSet(false);
+$breadcrumb->itemAttributeSet('class="breadcrumb-item"');
+```
+
+この場合、いずれも次のようなHTMLが生成されます。
+
+```html
+<li class="breadcrumb-item">
+    <!-- パンくずリストのHTML -->
+</li>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
