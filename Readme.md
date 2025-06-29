@@ -112,7 +112,7 @@ $breadcrumb->tagModeChange("ol");
 
 HTMLの属性を、Emmet形式から変換するか選びます。
 
-変換する場合、例えば「#breadcrumb-elem.breadcrumb.breadcrumb-list」という文字を渡すと、「id="breadcrumb-elem" class="breadcrumb breadcrumb-list"」を出力します。
+変換する場合、後述するHTML属性を指定するメソッドで、例えば「#breadcrumb-elem.breadcrumb.breadcrumb-list」という文字を渡すと、「id="breadcrumb-elem" class="breadcrumb breadcrumb-list"」を出力します。
 
 「true」を渡せば変換し、「false」を渡せば変換しません。
 
