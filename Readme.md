@@ -374,6 +374,28 @@ microdataが無効の場合、次のように出力されます。
 
 こうする事をお勧めします。
 
+### optionListSetメソッドについて
+
+オプションを設定します。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->optionListSet([
+    "htmlAttributeConvert" => true,                 // htmlAttributeConvertSetメソッドに渡します
+    "listAttribute" => ".breadcrumb",               // listAttributeSetメソッドに渡します
+    "itemAttribute" => ".breadcrumb-item",          // itemAttributeSetメソッドに渡します
+    "anchorAttribute" => ".breadcrumb-item-link",   // anchorAttributeSetメソッドに渡します
+    "spanAttribute" => ".breadcrumb-item-name",     // spanAttributeSetメソッドに渡します
+    "htmlEscape" => true,                           // htmlEscapeSetメソッドに渡します
+    "pageNameKey" => "name",                        // pageNameKeySetメソッドに渡します
+    "pageLinkKey" => "link",                        // pageLinkKeySetメソッドに渡します
+]);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
