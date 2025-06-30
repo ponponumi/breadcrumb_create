@@ -471,6 +471,31 @@ echo $html;
 
 内部的には、optionListSetメソッドを呼び出しておりますので、配列の形式については、上記のoptionListSetメソッドについての説明をご覧ください。
 
+### htmlメソッドについて
+
+引数、生成するHTMLについては、htmlCreateメソッドと同じです。
+
+しかし、このメソッドでは戻り値がなく、htmlCreateメソッドの値をechoで出力します。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "listAttribute" => ".breadcrumb#breadcrumb",
+    "itemAttribute" => ".breadcrumb-item",
+    "anchorAttribute" => ".breadcrumb-item-link",
+    "spanAttribute" => ".breadcrumb-item-name"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->html($data, $option);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
