@@ -326,7 +326,7 @@ $breadcrumb->microdataModeSet(false);
 
 #### HTMLでの出力例について
 
-前提条件として、次のデータをHTML生成用のメソッドに、渡したとします。
+前提条件として、後述する次のデータをHTML生成用のメソッドに、渡したとします。
 
 ```php
 $data = [
