@@ -324,6 +324,56 @@ $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->microdataModeSet(false);
 ```
 
+#### HTMLでの出力例について
+
+前提条件として、次のデータをHTML生成用のメソッドに、渡したとします。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+```
+
+microdataが有効の場合、次のように出力されます。
+
+```html
+<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="http://localhost/" itemprop="item">
+            <span itemprop="name">ホーム</span>
+        </a>
+        <meta itemprop="position" content="1">
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">ページ</span>
+        <meta itemprop="position" content="2">
+    </li>
+</ul>
+```
+
+microdataが無効の場合、次のように出力されます。
+
+```html
+<ul>
+    <li>
+        <a href="http://localhost/">
+            <span>ホーム</span>
+        </a>
+    </li>
+    <li>
+        <span>ページ</span>
+    </li>
+</ul>
+```
+
+##### どちらにするべきか？
+
+* JSON-LD形式のパンくずリストを使う→microdataを無効
+* JSON-LD形式のパンくずリストを使わない→microdataを有効
+
+こうする事をお勧めします。
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
