@@ -556,6 +556,54 @@ array(3) {
 }
 </pre>
 
+### jsonStringCreateメソッドについて
+
+JSON-LD形式のパンくずリストのJSONデータを生成します。
+
+戻り値は、JSON-LD形式のパンくずリストの、JSON文字列です。
+
+引数については、基本的にhtmlCreate、jsonArrayCreateメソッドと同じです。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "pageNameKey" => "name",
+    "pageLinkKey" => "link"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumbData = $breadcrumb->jsonStringCreate($data, $option);
+echo $breadcrumbData;
+```
+
+この場合、次のような形式のJSONを返します。
+
+```json
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "http://localhost/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "ページ"
+        }
+    ]
+}
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
