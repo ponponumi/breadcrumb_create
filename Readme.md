@@ -309,6 +309,21 @@ $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->pageKeySet("pageName","pageLink");
 ```
 
+### microdataModeSetメソッドについて
+
+HTMLを、microdata形式のパンくずリストにするかどうかを、選びます。
+
+初期値では「true」です。
+
+microdataを無効にする場合、次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->microdataModeSet(false);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
