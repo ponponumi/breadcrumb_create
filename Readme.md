@@ -245,6 +245,25 @@ $breadcrumb->spanAttributeSet('class="breadcrumb-item-name"');
 </span>
 ```
 
+### htmlEscapeSetメソッドについて
+
+HTMLに出力する際、文字列をhtmlspecialchars関数で、エスケープするかどうかを選びます。
+
+エスケープする場合はtrue、しない場合はfalseを渡してください。
+
+初期値ではtrueです。
+
+falseにすると、XSS攻撃が発生する可能性がありますので、余程の事情がない限り、trueのままにする事をおすすめします。
+
+次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->htmlEscapeSet(true);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
