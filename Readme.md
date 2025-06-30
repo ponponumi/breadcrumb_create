@@ -294,6 +294,21 @@ $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->pageLinkKeySet("pageLink");
 ```
 
+### pageKeySetメソッドについて
+
+ページ名とページリンクの連想配列のキーを指定してください。
+
+初期値では「link」です。
+
+例えば、ページ名は「pageName」、ページリンクは「pageLink」に変更する場合、次のように記述してください。
+
+戻り値はありません。
+
+```php
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->pageKeySet("pageName","pageLink");
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
