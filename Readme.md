@@ -116,6 +116,8 @@ HTMLの属性を、Emmet形式から変換するか選びます。
 
 「true」を渡せば変換し、「false」を渡せば変換しません。
 
+変換しない場合、例えば「id="breadcrumb-elem" class="breadcrumb breadcrumb-list"」という属性を付与したい場合、後述するHTML属性を指定するメソッドで、「id="breadcrumb-elem" class="breadcrumb breadcrumb-list"」を渡してください。
+
 ```php
 $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->htmlAttributeConvertSet(true);
