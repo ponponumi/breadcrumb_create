@@ -496,6 +496,64 @@ $breadcrumb = new BreadcrumbCreate();
 $breadcrumb->html($data, $option);
 ```
 
+### jsonArrayCreateメソッドについて
+
+JSON-LD形式のパンくずリスト用の配列データを生成します。
+
+戻り値は、JSON-LD形式のパンくずリストと同じ形式の、連想配列です。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "pageNameKey" => "name",
+    "pageLinkKey" => "link"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumbData = $breadcrumb->jsonArrayCreate($data, $option);
+var_dump($breadcrumbData);
+```
+
+この場合、次のようなデータ形式になります。
+
+<pre>
+array(3) {
+  ["@context"]=>
+  string(18) "https://schema.org"
+  ["@type"]=>
+  string(14) "BreadcrumbList"
+  ["itemListElement"]=>
+  array(2) {
+    [0]=>
+    array(4) {
+      ["@type"]=>
+      string(8) "ListItem"
+      ["position"]=>
+      int(1)
+      ["name"]=>
+      string(9) "ホーム"
+      ["item"]=>
+      string(17) "http://localhost/"
+    }
+    [1]=>
+    array(3) {
+      ["@type"]=>
+      string(8) "ListItem"
+      ["position"]=>
+      int(2)
+      ["name"]=>
+      string(9) "ページ"
+    }
+  }
+}
+</pre>
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
