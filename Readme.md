@@ -414,6 +414,49 @@ trueにすると、「pageNameKey」と「pageLinkKey」以外のデータを、
 
 省略した場合はfalseとして扱います。
 
+### htmlCreateメソッドについて
+
+パンくずリストのHTMLを生成します。
+
+戻り値は、生成したHTMLを文字列として返します。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "listAttribute" => ".breadcrumb#breadcrumb",
+    "itemAttribute" => ".breadcrumb-item",
+    "anchorAttribute" => ".breadcrumb-item-link",
+    "spanAttribute" => ".breadcrumb-item-name"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$html = $breadcrumb->htmlCreate($data, $option);
+echo $html;
+```
+
+この場合、次のようなHTMLを生成します。
+
+```html
+<ul id="breadcrumb" class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="http://localhost/" class="breadcrumb-item-link" itemprop="item">
+            <span class="breadcrumb-item-name" itemprop="name">ホーム</span>
+        </a>
+        <meta itemprop="position" content="1">
+    </li>
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span class="breadcrumb-item-name" itemprop="name">ページ</span>
+        <meta itemprop="position" content="2">
+    </li>
+</ul>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
