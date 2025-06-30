@@ -281,7 +281,7 @@ $breadcrumb->pageNameKeySet("pageName");
 
 ### pageLinkKeySetメソッドについて
 
-ページ名の連想配列のキーを指定してください。
+ページリンクの連想配列のキーを指定してください。
 
 初期値では「link」です。
 
