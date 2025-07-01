@@ -604,6 +604,56 @@ echo $breadcrumbData;
 }
 ```
 
+### jsonScriptCreateメソッドについて
+
+JSON-LD形式のパンくずリストのJSONデータを生成し、scriptタグで囲います。
+
+戻り値は、JSON-LD形式のパンくずリストの、JSONをscriptタグで囲った文字列です。
+
+引数については、基本的にhtmlCreate、jsonArrayCreateメソッドと同じです。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "pageNameKey" => "name",
+    "pageLinkKey" => "link"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumbData = $breadcrumb->jsonScriptCreate($data, $option);
+echo $breadcrumbData;
+```
+
+この場合、次のような形式のJSONを返します。
+
+```html
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "http://localhost/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ページ"
+            }
+        ]
+    }
+</script>
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
