@@ -654,6 +654,29 @@ echo $breadcrumbData;
 </script>
 ```
 
+### jsonScriptメソッドについて
+
+引数、生成する文字列については、jsonScriptCreateメソッドと同じです。
+
+しかし、このメソッドでは戻り値がなく、jsonScriptCreateメソッドの値をechoで出力します。
+
+次のように記述してください。
+
+```php
+$data = [
+    ["name" => "ホーム","link" => "http://localhost/"],
+    ["name" => "ページ"],
+];
+
+$option = [
+    "pageNameKey" => "name",
+    "pageLinkKey" => "link"
+];
+
+$breadcrumb = new BreadcrumbCreate();
+$breadcrumb->jsonScript($data, $option);
+```
+
 ## ライセンスについて
 
 このパッケージは、MITライセンスとして作成されています。
