@@ -6,7 +6,7 @@ use Ponponumi\BreadcrumbCreate\BreadcrumbCreate;
 
 $array = [
     ["name" => "ホーム","link" => "/"],
-    ["name" => "<JSONのテスト>"],
+    ["name" => "\"'<JSON&のテスト>'\""],
 ];
 
 $breadcrumb = new BreadcrumbCreate();
